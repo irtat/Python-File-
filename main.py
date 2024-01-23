@@ -1,34 +1,35 @@
-# Basic ATM System
+# Assignment 03:
 
-balance = 5000.00
-
-while True:
-    print("Welcome to ATM")
-    print("\n1. Check Your Balance")
-    print("2. Withdraw Amount")
-    print("3. Deposit Amount")
-    print("4. Exit")
-
-    choice = input("Enter your choice (1-4): ")
-
-    if choice == "1":
-        print(f"Your balance is: ${balance:.2f}")
-    elif choice == "2":
-        amount = float(input("Enter the amount to withdraw: $"))
-        if amount > balance:
-            print("Not enough balance. Cannot withdraw.")
-        else:
-            balance -= amount
-            print(f"${amount:.2f} withdrawn. Remaining balance: ${balance:.2f}")
-    elif choice == "3":
-        amount = float(input("Enter the amount to deposit: $"))
-        if amount < 0:
-            print("Invalid deposit amount.")
-        else:
-            balance += amount
-            print(f"${amount:.2f} deposited. New balance: ${balance:.2f}")
-    elif choice == "4":
-        print("Thanks for using the ATM. Have a great day!")
-        break
+def calculate_factorial(n):
+    if n == 0 or n == 1:
+        print(f"Factorial of {n} is: 1")
+        return 1
     else:
-        print("Invalid choice. Please enter 1, 2, 3, or 4.")
+        result = n * calculate_factorial(n - 1)
+        print(f"Factorial of {n} is: {result}")
+        return result
+
+
+def multiply_numbers(a, b):
+    result = a * b
+    print(f"{a} multiplied by {b} is: {result}")
+    return result
+
+
+def divide_numbers(a, b):
+    if b != 0:
+        result = a / b
+        print(f"{a} divided by {b} is: {result}")
+        return result
+    else:
+        print("Error: Division by zero is not possible.")
+        return None
+
+
+n = 5
+calculate_factorial(n)
+
+a = 10
+b = 3
+multiply_numbers(a, b)
+divide_numbers(a, b)
